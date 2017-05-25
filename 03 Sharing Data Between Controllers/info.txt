@@ -1,0 +1,5 @@
+Instead of using mg-controller on a template it is preffered to use one controller per state. For states we use ui.router. 
+We add states in .config(). .config is used to configure application before it boots up. 
+Now in stateprovider we add state and second parameter is configuration object which takes url, template etc. Then we create new html file for template. Now we don't need to use ng-controller inside of htmll if it is already refrenced in config.
+ui-view: For injecting states into views.
+Now sharing data between controllers is sharing data between states or templates. 

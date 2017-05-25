@@ -1,0 +1,27 @@
+<!doctype html>
+
+<html ng-app>
+	<head >
+		<title>Page Title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	</head>
+
+	<body>
+<!--        Anything that we write in double curly braces will act as a bimding in angularjs. All we need to do is include ng-app and include angularjs libraries.-->
+        {{2+4}};
+        {{ "hello" }}
+<!--        Another type of binding is possible using ng-model-->
+        <input type="text" ng-model="first.name" />
+         HELLO {{first.name}}
+        
+        <div ng-class="first.name"></div>
+<!--        If i write  alert alert-danger in this box we will see bootstrap alert class. -->
+	</body>
+</html
+    

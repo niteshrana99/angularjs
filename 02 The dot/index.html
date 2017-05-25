@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html ng-app="app">
+	<head>
+		<title>Page Title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="app.js"></script>
+	</head>
+
+	<body>
+        <input type="text" ng-model="message" />
+        <h1>{{message}}</h1>
+        <div ng-controller="ctrl1">
+           <input type="text" ng-model="message" />
+            <h1>{{message}}</h1> 
+        </div>
+        <div ng-controller="ctrl2">
+           <input type="text" ng-model="message" />
+            <h1>{{message}}</h1> 
+        </div>
+        <h1>---------Wathch the difference Now -------------</h1>
+        <input type="text" ng-model="data.message" />
+        <h1>{{data.message}}</h1>
+        <div ng-controller="ctrl3">
+           <input type="text" ng-model="data.message" />
+            <h1>{{data.message}}</h1> 
+        </div>
+        <div ng-controller="ctrl4">
+           <input type="text" ng-model="data.message" />
+            <h1>{{data.message}}</h1> 
+        </div>
+        <div ng-controller="ctrl5">
+    <input type="text" ng-model="foo"/>
+    <div ng-controller="ctrl6">
+        <input type="text" ng-model="foo"/>
+    </div>
+</div>
+	</body>
+</html>
+<!--So when we use message in ng-model we see that the value written in first controller doesnot update first controller not the second. So what happens is we have overwritten this message property in ctrl1 and ctrl2, so they are no longer communicationg with each other, and we have kind of destroyed scope inheritance. So if we want to keep scope inheritance intact, always make sure we have . in our model. So when we use data.message the data model is never being overwritten, it's just the message on model that is overwritten-->

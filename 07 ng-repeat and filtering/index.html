@@ -1,0 +1,27 @@
+<!doctype html>
+
+<html ng-app="myApp">
+	<head>
+		<title>Page Title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+        <script src="app.js"></script>
+	</head>
+
+	<body>
+         <div ng-controller="AvengersController">
+<!--             ng-model="searchText" , will give the whole row when we search through input text. Now suppose we want to search through name only. So we do searchText.name and then filter by searchText object. So this will be limited to name of the actor. Similarly if we wanted to filter by character, we can do search.Character. If we want to do it either way, we can do it by search.$-->
+             <input type="text" ng-model="search.$" />
+             <table>
+                 <tr ng-repeat="avengers in avengers.cast | filter:search">
+                     <td>{{avengers.Name}}</td>
+                     <td>{{avengers.Character}}</td>
+                 </tr>
+             </table>
+        </div>
+	</body>
+</html>
+
+<!--So this filter: is the filter function provided by angularjs. So it can take either an string or object. If it is an object you can limit the what you want to search for by giving the property like Name, Character. If it is a string it will search entirely.-->
